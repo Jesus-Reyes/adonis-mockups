@@ -1,0 +1,89 @@
+
+# @urlBase = http://localhost:3333/api/v1/
+@urlBase = http://3.88.206.120/api/v1/
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTY5OTQ2NzQ4NiwiZXhwIjoxNjk5NDY3Nzg2fQ.jr5kBUnXwduxht8Y7Bl4s4VVCA31sNrvwPjzzWkvQ0A
+
+###* Register user
+POST {{urlBase}}add-user HTTP/1.1
+content-type: application/json
+
+{
+    "sa_user":"neuro123",
+    "sa_name_pat":"Ramirez",
+    "sa_name_mat":"Garcia",
+    "sa_name_nom":"Luis",
+    "sa_mail":"luis_3@mail.com",
+    "sa_cel":"1234567890"
+}
+###
+###* update and set password user
+POST {{urlBase}}set-password HTTP/1.1
+content-type: application/json
+
+{
+    "sa_user": "neuro123",
+    "sa_pass": "asidefacil123"
+}
+
+
+
+###
+###* Login API user
+POST {{urlBase}}api-login HTTP/1.1
+Content-Type: application/json
+
+{
+    "sa_user":"neuro123",
+    "sa_pass":"asidefacil123"
+}
+
+
+###
+###* Login User
+POST {{urlBase}}user-login HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "sa_user":"neuro",
+    "sa_pass":"test"
+}
+
+
+
+###* ADD Product
+POST {{urlBase}}add-product HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    
+    "product_name":" producto23",
+     "product_control_id":"1234567890",
+     "product_user":"neuro123",
+     "product_pass":"12345678",
+     "product_mail":"luis@mail.com",
+     "product_cel":"1234567890"
+}
+
+### 
+###* List User products
+POST {{urlBase}}list-user-products HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+### 
+###* List User products
+POST {{urlBase}}user-logout HTTP/1.1
+Content-Type: application/json
+# Authorization: Bearer {{token}}
+
+
+###
+###* get llaves
+POST  {{urlBase}}get-llaves HTTP/1.1
+Content-Type: application/json
+
+{
+    /// "sa_user":""
+}
