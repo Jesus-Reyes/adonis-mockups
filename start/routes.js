@@ -45,4 +45,11 @@ Route.group(() => {
   // ! Obtener llaves
   Route.post('get-llaves', 'AuthUserController.getLLaves');
 
+
+  //* ESP Controler 
+
+  Route.get('logs', 'LogController.index')
+  Route.post('logs', 'LogController.store')
+
+
 }).prefix('api/v1/');
