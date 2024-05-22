@@ -39,6 +39,7 @@ Route.group(() => {
 
   Route.get('get-user-data', 'AuthUserController.getUserData');
   Route.get('tipo-personas', 'TipoPersonaController.index')
+  Route.post('tipo-personas', 'TipoPersonaController.post')
 
 
   // ! Obtener llaves

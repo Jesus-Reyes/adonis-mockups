@@ -7,6 +7,11 @@ class TipoPersonaController {
     const tipos = await TipoPersona.all()
     return response.json(tipos)
   }
+
+  async post ({response}) {
+    const tipos = await TipoPersona.all()
+    return response.json(tipos)
+  }
 }
 
 module.exports = TipoPersonaController
