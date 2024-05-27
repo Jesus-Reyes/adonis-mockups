@@ -48,8 +48,12 @@ Route.group(() => {
 
   //* ESP Controler 
 
-  Route.get('logs', 'LogController.index')
-  Route.post('logs', 'LogController.store')
+  Route.get('logs', 'LogController.index');
+  Route.post('logs', 'LogController.store');
+
+  Route.get('logs/total-endpoints', 'LogController.totalEndpoints');
+  Route.post('logs/count-by-endpoint', 'LogController.countByEndpoint'); // Usando POST para pasar el endpoint
+  Route.post('logs/count-success-fail', 'LogController.countSuccessFail');
 
 
 }).prefix('api/v1/');
